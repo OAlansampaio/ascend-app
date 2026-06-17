@@ -35,7 +35,7 @@ jobs:
 
       # 5. Instala dependências npm
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # 6. Build do app web (gera a pasta dist/)
       - name: Build web
