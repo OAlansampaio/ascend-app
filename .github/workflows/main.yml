@@ -44,16 +44,17 @@ jobs:
       - name: Build web
         run: npm run build
 
+      - name: Install TypeScript
+        run: npm install -D typescript --legacy-peer-deps
+
       - name: Add Android platform
-        run: npx cap add android || true
+        run: npx cap add android
 
       - name: Install Health Connect plugin
         run: npm install capacitor-health-connect --legacy-peer-deps
 
       - name: Capacitor sync
-        run: |
-          npm install -D typescript --legacy-peer-deps
-          npx cap sync android
+        run: npx cap sync android
 
       - name: Grant Gradle permission
         run: chmod +x android/gradlew
