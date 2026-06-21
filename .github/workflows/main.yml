@@ -52,7 +52,7 @@ jobs:
 
       - name: Capacitor sync
         run: |
-          npm install -D typescript
+          npm install -D typescript --legacy-peer-deps
           npx cap sync android
 
       - name: Grant Gradle permission
