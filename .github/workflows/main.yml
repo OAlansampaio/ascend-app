@@ -51,7 +51,9 @@ jobs:
         run: npm install capacitor-health-connect --legacy-peer-deps
 
       - name: Capacitor sync
-        run: npx cap sync android
+        run: |
+          npm install -D typescript
+          npx cap sync android
 
       - name: Grant Gradle permission
         run: chmod +x android/gradlew
