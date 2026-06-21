@@ -56,6 +56,11 @@ jobs:
       - name: Capacitor sync
         run: npx cap sync android
 
+      - name: Fix minSdkVersion for Health Connect
+        run: |
+          sed -i 's/minSdkVersion = [0-9]*/minSdkVersion = 26/' android/variables.gradle
+          cat android/variables.gradle
+
       - name: Grant Gradle permission
         run: chmod +x android/gradlew
 
